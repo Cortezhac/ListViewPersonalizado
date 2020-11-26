@@ -14,9 +14,11 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ContactosActivity extends AppCompatActivity {
     private ListView listaContactos;
@@ -43,5 +45,13 @@ public class ContactosActivity extends AppCompatActivity {
 
         CutomContactosAdapter adapter = new CutomContactosAdapter(getApplicationContext(), admin.listarContactos());
         listaContactos.setAdapter(adapter);
+
+        listaContactos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(ContactosActivity.this, "Has hecho click en " + admin.listarContactos().get(i).getNombre() +
+                        " " + admin.listarContactos().get(i).getApellido(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

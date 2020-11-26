@@ -18,12 +18,12 @@ import java.util.ArrayList;
 public class CutomContactosAdapter extends BaseAdapter {
     private ArrayList<Contactos> listaContactos;
     private Context context;
-
+    //Contructor de objeto que pide una lista y el contexto de la app
     public CutomContactosAdapter(Context context, ArrayList<Contactos> listaContactos){
         this.listaContactos = listaContactos;
         this.context = context;
     }
-
+    // Estos 3 elemtos sirven para iterar cada elemento de la lista
     @Override
     public int getCount() {
         return listaContactos.size();
@@ -45,10 +45,11 @@ public class CutomContactosAdapter extends BaseAdapter {
         TextView nombre, telefono;
         if(view == null){
             view = LayoutInflater.from(this.context).inflate(R.layout.custom_list_view, null);
+            // Binding o enlce entre java y XML
             imageView = view.findViewById(R.id.imageView);
             nombre = view.findViewById(R.id.txtNombre);
             telefono = view.findViewById(R.id.txtTelefono);
-
+            // Acciones que se ejecutara sobre el custom layout
             imageView.setImageResource(R.drawable.ic_baseline_account_circle_24);
             imageView.setColorFilter(Color.BLACK);
             nombre.setText(this.listaContactos.get(i).getNombre());
