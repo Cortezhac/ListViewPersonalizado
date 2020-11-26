@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Contactos">
+        <activity android:name=".AgregarContactoActivity"></activity>
         <activity
             android:name=".ContactosActivity"
             android:label="@string/title_activity_contactos"

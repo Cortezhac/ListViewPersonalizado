@@ -32,4 +32,8 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + ContactosContract.ContactosEntry.TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
+
+    public SQLiteDatabase getConexion(){
+        return getReadableDatabase();
+    }
 }
