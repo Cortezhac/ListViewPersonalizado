@@ -33,8 +33,9 @@ public class ContactosActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent agregar = new Intent(getApplicationContext(), AgregarContactoActivity.class);
-                startActivity(agregar);
+                //Intent agregar = new Intent(getApplicationContext(), AgregarContactoActivity.class);
+                //startActivity(agregar);
+                finish();
             }
         });
         admin = new ContactoDAO(getApplicationContext());

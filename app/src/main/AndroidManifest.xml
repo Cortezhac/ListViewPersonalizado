@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Contactos">
-        <activity android:name=".AgregarContactoActivity"></activity>
-        <activity
-            android:name=".ContactosActivity"
-            android:label="@string/title_activity_contactos"
-            android:theme="@style/Theme.Contactos.NoActionBar">
+        <activity android:name=".AgregarContactoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ContactosActivity"
+            android:label="@string/title_activity_contactos"
+            android:theme="@style/Theme.Contactos.NoActionBar">
+
         </activity>
     </application>
 

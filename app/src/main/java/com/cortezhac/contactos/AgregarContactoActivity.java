@@ -2,6 +2,7 @@ package com.cortezhac.contactos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -35,11 +36,17 @@ public class AgregarContactoActivity extends AppCompatActivity {
             nuevoContacto.setTelefono(telefono.getText().toString());
             if(admin.insertar(nuevoContacto)){
                 Toast.makeText(this, "Contacto agregado", Toast.LENGTH_SHORT).show();
-                finish();
+                Intent actividad = new Intent(getApplicationContext(), ContactosActivity.class);
+                startActivity(actividad);
             }else{
                 Toast.makeText(this, "Error llene los campos", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public void listar(View v){
+        Intent actividad = new Intent(getApplicationContext(), ContactosActivity.class);
+        startActivity(actividad);
     }
 
     public boolean validar(EditText campo){
